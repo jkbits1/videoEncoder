@@ -1,0 +1,26 @@
+{
+  "name": "video-encoder",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "fluent-ffmpeg": "^2.0.1"
+  },
+  "devDependencies": {
+    "tape": "^4.5.1"
+  },
+  "scripts": {
+    "test": "node ./spec/test.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jkbits1/videoEncoder.git"
+  },
+  "author": "jkbits1",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jkbits1/videoEncoder/issues"
+  },
+  "homepage": "https://github.com/jkbits1/videoEncoder#readme"
+}

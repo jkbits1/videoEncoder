@@ -5,24 +5,15 @@
 "use strict";
 
 const ffmpeg = require("fluent-ffmpeg");
+const names = require('./names');
 
 var fileNameBody = "planet";
 
 var fileNumMin = 1;
-var fileNumMax = 4;
+var fileNumMax = 3;
 
-var len = (fileNumMax - fileNumMin) + 1;
-
-console.log(len);
-
-var fileNumRange = Array.apply(0, Array(len))
-  .map((val, idx) => {
-    return idx + fileNumMin;
-  });
-
-var fileNames = fileNumRange.map(val => {
-  return fileNameBody + val;
-});
+var fileNames =
+  names.generateNames(fileNameBody, fileNumMin, fileNumMax);
 
 console.log(fileNames);
 
@@ -33,6 +24,6 @@ fileNames.forEach(fileName => {
   // .outputOptions('')
   // .outputOptions(['-preset medium', '-crf 18'])
   .outputOptions([ '-preset medium', '-crf 18', '-ss 90', '-t 10' ])
-  .save('./' + fileName + 'test.m4v');
+  .save('./' + fileName + '.m4v');
 });
 
